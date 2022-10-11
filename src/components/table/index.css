@@ -1,0 +1,28 @@
+.spin-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.options-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.vencimiento-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infocontacto-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+
+.firstcolumn-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

@@ -1,0 +1,17 @@
+.indicator_wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+.detail-task-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    align-items: center;
+}

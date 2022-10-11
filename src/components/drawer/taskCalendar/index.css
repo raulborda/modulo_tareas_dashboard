@@ -1,0 +1,10 @@
+.task-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.task-detail {
+    margin-top: 5px;
+}

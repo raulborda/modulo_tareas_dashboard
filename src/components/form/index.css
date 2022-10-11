@@ -1,0 +1,67 @@
+.date_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.upload-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.upload-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.note-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+  background: #fffcdc;
+  border-radius: 4px;
+  min-height: 6rem;
+  border: 1px solid #e3e0e0;
+}
+
+.note-wrapper-interno {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: calc(100% - 10px);
+  margin-left: 10px;
+  background: #fffcdc;
+  border-radius: 4px;
+  min-height: 6rem;
+  border: 1px solid #e3e0e0;
+}
+
+.nota-tarea-linea-superior {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.nota-tarea-fecha {
+  font-weight: bold;
+  color: #c8c8c8;
+  margin: 0px;
+}
+
+.task-client {
+  font-weight: bold;
+}
