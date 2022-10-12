@@ -54,37 +54,33 @@ const HeaderLayout = () => {
 
   return (
     <div className="top-panel-wrapper">
-      <h3>Header</h3>
+      <h3>Tareas</h3>
       <div className="top-panel-buttons">
-        <Switch
+        {/* <Switch
           onChange={(v) => {
             console.log(v);
-            setFilterIniciadas(!v);
+            // setFilterIniciadas(!v);
           }}
           checkedChildren={<UserAddOutlined />}
           unCheckedChildren={<UsergroupAddOutlined />}
-          defaultChecked
-        />
+        /> */}
+
+        {setFilterIniciadas(true)}
 
         <Switch
           style={{ marginLeft: "10px" }}
           onChange={(v) => {
-            setFilterEnable(!v);
+            setFilterEnable(v);
           }}
           checkedChildren={<FunnelPlotOutlined />}
           unCheckedChildren={<FunnelPlotOutlined />}
-          defaultChecked
         />
 
         <DateFilter filterEnable={filterEnable} />
         <StateFilter filterEnable={filterEnable} />
-        <UserGroupFilter
-          listadoGrupos={listadoGrupos}
-          listadoUsuarios={listadoUsuarios}
-          filterEnable={usuarioNormal ? usuarioNormal : filterEnable}
-        />
+        <UserGroupFilter listadoUsuarios={listadoUsuarios} />
 
-        <Button
+        {/* <Button
           style={{ marginLeft: 8 }}
           onClick={() => setViewMode("tableView")}
           className="boton-iconos"
@@ -106,16 +102,7 @@ const HeaderLayout = () => {
           className="boton-iconos"
         >
           <AreaChartOutlined />
-        </Button>
-        <Button
-          type="primary"
-          style={{ marginLeft: 5 }}
-          onClick={() =>
-            setTaskDrawerVisible({ visible: true, content: "Nueva Tarea" })
-          }
-        >
-          <PlusOutlined /> Tarea
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

@@ -21,6 +21,7 @@ const TableView = () => {
   //! Para gestionar el switch del filtro, opto por enviar string vacio y 0 en las vars de la query
   //! de esta manera evito tener que estar seteando states y perdiendo el valor anterior
 
+
   const {
     error,
     loading,
@@ -35,6 +36,7 @@ const TableView = () => {
       fecha: filterEnable ? "" : filterDate.date,
       estado: filterEnable ? 0 : filterState,
       idUsuarioFiltro: idUsuarioFiltro,
+
     },
   });
 
@@ -66,6 +68,8 @@ const TableView = () => {
       </QueryResult>
     </>
   );
+
+  
 };
 
 export default TableView;
