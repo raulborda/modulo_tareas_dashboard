@@ -67,14 +67,15 @@ const HeaderLayout = () => {
 
         {setFilterIniciadas(true)}
 
-        <Switch
+        {/* <Switch
           style={{ marginLeft: "10px" }}
           onChange={(v) => {
             setFilterEnable(v);
           }}
           checkedChildren={<FunnelPlotOutlined />}
           unCheckedChildren={<FunnelPlotOutlined />}
-        />
+        /> */}
+        {setFilterEnable(false)}
 
         <DateFilter filterEnable={filterEnable} />
         <StateFilter filterEnable={filterEnable} />
