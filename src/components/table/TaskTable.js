@@ -15,6 +15,7 @@ import { useMutation } from "@apollo/client";
 import { UPDATE_ESTADO_TAREA } from "../../graphql/mutation/tareas";
 import OpenNotification from "../notification/OpenNotification";
 import DetailDrawer from "../drawer/detailDrawer/DetailDrawer";
+import TaskCalendar from "../drawer/taskCalendar/TaskCalendar";
 
 const TaskTable = ({ tareas, queryPoll }) => {
   const [updateEstadoTareaIframeResolver] = useMutation(UPDATE_ESTADO_TAREA);
@@ -161,14 +162,14 @@ const TaskTable = ({ tareas, queryPoll }) => {
       dataIndex: "tar_asunto",
       key: "tar_asunto",
       ellipsis: true,
-      width: 430,
+      width: 200,
       ...getColumnSearchProps("tar_asunto"),
     },
     {
       title: "Cliente",
       dataIndex: "cli_nombre",
       key: "cli_nombre",
-      width: 250,
+      width: 200,
       ...getColumnSearchProps("cli_nombre"),
       render: (dataIndex, item) => {
         return (
@@ -199,6 +200,7 @@ const TaskTable = ({ tareas, queryPoll }) => {
     {
       title: "Fuente",
       key: "fuente",
+      width: 90,
       dataIndex: "ori_id",
       render: (dataIndex, item) => (
         <Tag color={item.ori_color} key={"key"}>
@@ -209,6 +211,7 @@ const TaskTable = ({ tareas, queryPoll }) => {
     {
       title: "Creación",
       key: "fechaCreacion",
+      width: 100,
       dataIndex: "tar_fecha",
       sorter: (a, b) => a.tar_fecha.localeCompare(b.tar_fecha),
       showSorterTooltip: false,
@@ -237,12 +240,14 @@ const TaskTable = ({ tareas, queryPoll }) => {
     {
       title: "Asignado",
       key: "asignado",
+      width: 90,
       dataIndex: "asignado",
       render: (dataIndex, item) => <span>{item.usu_nombre} </span>,
     },
     {
       title: "Módulo",
       key: "modori",
+      width: 90,
       dataIndex: "mod_id",
       render: (dataIndex, item) => {
         return (
@@ -259,6 +264,7 @@ const TaskTable = ({ tareas, queryPoll }) => {
     {
       title: "",
       key: "",
+      width: 90,
       render: (dataIndex, item) => (
         <div className="options-wrapper">
           <EyeOutlined
