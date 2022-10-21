@@ -109,12 +109,12 @@ const DateFilter = ({ filterEnable }) => {
               >
                 Vencidas
               </Radio.Button>
-              <Radio.Button
+              {/* <Radio.Button
                 value={"all"}
                 onClick={() => setDropdownText("Todas")}
               >
                 Todas
-              </Radio.Button>
+              </Radio.Button> */}
             </div>
           }
         >

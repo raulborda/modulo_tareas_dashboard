@@ -225,7 +225,7 @@ const TaskTable = ({ tareas, queryPoll }) => {
       dataIndex: "tar_vencimiento",
       showSorterTooltip: false,
       width: 150,
-      sorter: (a, b) => a.tar_vencimiento.localeCompare(b.tar_vencimiento),
+      sorter: (a, b) => {a.tar_vencimiento.localeCompare(b.tar_vencimiento)},
       render: (dataIndex, item) => (
         <div className="vencimiento-wrapper">
           <span style={{ marginRight: "5px" }}>
