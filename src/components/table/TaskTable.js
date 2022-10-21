@@ -212,12 +212,12 @@ const TaskTable = ({ tareas, queryPoll }) => {
       title: "Creación",
       key: "fechaCreacion",
       width: 100,
-      dataIndex: "tar_fecha",
+      dataIndex: "fechacreacion",
       sorter: (a, b) => a.tar_fecha.localeCompare(b.tar_fecha),
       showSorterTooltip: false,
-      render: (dataIndex, item) => {
-        return <span>{moment(dataIndex).format("DD/MM/YYYY")}</span>;
-      },
+      // render: (dataIndex, item) => {
+      //   return <span>{moment(dataIndex).format("DD/MM/YYYY")}</span>;
+      // },
     },
     {
       title: "Vencimiento",
