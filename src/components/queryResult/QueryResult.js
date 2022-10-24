@@ -7,8 +7,8 @@ const QueryResult = ({ loading, error, data, children }) => {
   }
   if (loading) {
     return (
-      <div className="center-wrapper">
-        <Spin />
+      <div className="center-wrapper" style={{marginTop:"10px", marginBottom:"20px"}}>
+        <Spin  />
       </div>
     );
   }
