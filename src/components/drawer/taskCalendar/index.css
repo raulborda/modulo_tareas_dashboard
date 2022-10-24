@@ -20,7 +20,7 @@
 }
 
 .scroll {
-  height: 200px;
+  height: 160px;
   overflow-y: scroll;
 }
 
@@ -48,6 +48,7 @@
   width: 20vw;
   margin-right: 10px;
   border: solid 1px #eaeaea;
+  margin-left: 5px;
 }
 
 h4 {
