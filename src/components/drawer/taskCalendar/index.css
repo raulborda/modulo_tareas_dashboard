@@ -1,28 +1,63 @@
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: white;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: auto;
+  background-color: #cccccc;
+}
+
 .task-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.scroll {
+  height: 200px;
+  overflow-y: scroll;
 }
 
 .task-detail {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
-.ant-picker-calendar-header{
-    margin-top: -10px;
+.ant-picker-calendar-header {
+  margin-top: -1px;
+  margin-bottom: -10px;
+  padding-top: -8px;
 }
 
-.div_contenedor{
-    width: 20vw;
-    margin-left: 15px;
-    border: solid 1px #eaeaea;
+.ant-picker-calendar-header .ant-select-selector {
+  margin-top: -5px;
+  margin-bottom: 5px;
 }
 
-h4{
-    margin-left:8px;
+.ant-picker-calendar-header .ant-radio-button-wrapper {
+  margin-top: -5px;
+  margin-bottom: 5px;
 }
 
-.ant-spin-dot-item{
-    background-color: #00b33c !important;
+.div_contenedor {
+  width: 20vw;
+  margin-right: 10px;
+  border: solid 1px #eaeaea;
+}
+
+h4 {
+  margin-left: 8px;
+}
+
+.ant-spin-dot-item {
+  background-color: #00b33c !important;
+}
+
+.task-wrapper span {
+  margin-right: 5px;
 }

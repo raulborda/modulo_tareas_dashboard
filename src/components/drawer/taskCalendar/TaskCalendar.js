@@ -132,7 +132,6 @@ const TaskCalendar = ({ queryPoll }) => {
     <>
       <div className="div_contenedor">
         <Calendar
-          className="cccc"
           dateCellRender={dateCellRender}
           fullscreen={false}
           onChange={(v) => setFilterDate(moment(v).format("YYYY-MM-DD"))}
@@ -149,76 +148,78 @@ const TaskCalendar = ({ queryPoll }) => {
                   }
                   key={idx}
                 >
-                  {clientesParaIterar &&
-                    clientesParaIterar.map((clientes, index) => {
-                      if (clientes.horaVto === hora) {
-                        return (
-                          <Fragment key={index}>
-                            <h4>{clientes.cli_nombre}</h4>
-                            {ownTasks.map((tarea) => {
-                              let tagColor = "";
-                              switch (true) {
-                                case tarea.pri_id === 1:
-                                  tagColor = "red";
-                                  break;
-                                case tarea.pri_id === 2:
-                                  tagColor = "gold";
-                                  break;
-                                case tarea.pri_id === 3:
-                                  tagColor = "green";
-                                  break;
-                                default:
-                                  break;
-                              }
-                              if (
-                                tarea.cli_nombre === clientes.cli_nombre &&
-                                tarea.tar_horavencimiento === hora
-                              ) {
-                                return (
-                                  <div
-                                    className="task-wrapper"
-                                    key={index + tarea.cli_nombre}
-                                  >
-                                    <div className="task-detail">
-                                      <Tag
-                                        style={{ marginLeft: "10px" }}
-                                        color={tagColor}
-                                      >
-                                        {tarea.pri_desc}
-                                      </Tag>
+                  <div className="scroll">
+                    {clientesParaIterar &&
+                      clientesParaIterar.map((clientes, index) => {
+                        if (clientes.horaVto === hora) {
+                          return (
+                            <Fragment key={index}>
+                              <h4>{clientes.cli_nombre}</h4>
+                              {ownTasks.map((tarea) => {
+                                let tagColor = "";
+                                switch (true) {
+                                  case tarea.pri_id === 1:
+                                    tagColor = "red";
+                                    break;
+                                  case tarea.pri_id === 2:
+                                    tagColor = "gold";
+                                    break;
+                                  case tarea.pri_id === 3:
+                                    tagColor = "green";
+                                    break;
+                                  default:
+                                    break;
+                                }
+                                if (
+                                  tarea.cli_nombre === clientes.cli_nombre &&
+                                  tarea.tar_horavencimiento === hora
+                                ) {
+                                  return (
+                                    <div
+                                      className="task-wrapper"
+                                      key={index + tarea.cli_nombre}
+                                    >
+                                      <div className="task-detail">
+                                        <Tag
+                                          style={{ marginLeft: "10px" }}
+                                          color={tagColor}
+                                        >
+                                          {tarea.pri_desc}
+                                        </Tag>
 
-                                      <Tag
-                                        style={{ marginLeft: "10px" }}
-                                        color={tarea.ori_color}
-                                      >
-                                        {tarea.ori_desc}
-                                      </Tag>
-                                      <span>{tarea.tar_asunto}</span>
+                                        <Tag
+                                          style={{ marginLeft: "10px" }}
+                                          color={tarea.ori_color}
+                                        >
+                                          {tarea.ori_desc}
+                                        </Tag>
+                                        <span>{tarea.tar_asunto}</span>
+                                      </div>
+                                      <span>
+                                        <Popconfirm
+                                          placement="topLeft"
+                                          title="¿Desea completar la tarea?"
+                                          okText="Si"
+                                          cancelText="No"
+                                          onConfirm={() => confirm(tarea)}
+                                        >
+                                          <CheckOutlined
+                                            style={{
+                                              fontSize: "12px",
+                                              color: "green",
+                                            }}
+                                          />
+                                        </Popconfirm>
+                                      </span>
                                     </div>
-                                    <span>
-                                      <Popconfirm
-                                        placement="topLeft"
-                                        title="¿Desea completar la tarea?"
-                                        okText="Si"
-                                        cancelText="No"
-                                        onConfirm={() => confirm(tarea)}
-                                      >
-                                        <CheckOutlined
-                                          style={{
-                                            fontSize: "12px",
-                                            color: "green",
-                                          }}
-                                        />
-                                      </Popconfirm>
-                                    </span>
-                                  </div>
-                                );
-                              }
-                            })}
-                          </Fragment>
-                        );
-                      }
-                    })}
+                                  );
+                                }
+                              })}
+                            </Fragment>
+                          );
+                        }
+                      })}
+                  </div>
                 </List>
               );
             })}
