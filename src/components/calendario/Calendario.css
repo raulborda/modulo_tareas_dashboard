@@ -1,0 +1,266 @@
+/* @import "antd/dist/antd.css";
+
+.lista_tareas::-webkit-scrollbar {
+  width: 8px;
+  background-color: white;
+}
+.lista_tareas::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: white;
+}
+.lista_tareas::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: auto;
+  background-color: #cccccc;
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  height: 757px;
+
+}
+
+.div_wrapper {
+  /* border-top: solid 1px #e8e8e8;
+  border-left: solid 1px #e8e8e8;
+  border-right: solid 1px #e8e8e8;
+  border-bottom: solid 1px #e8e8e8; */
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  width: auto;
+  height: 100%;
+
+} */
+
+/*color: #f9f9f9*/
+
+.titulo {
+  padding-top: 0px;
+  padding-left: 8px;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: rgb(96, 93, 95);
+  text-transform: uppercase;
+  box-sizing: border-box;
+  border-bottom: solid 1px #f4f4f4;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  width: 103%;
+  margin-left: -10px;
+  margin-top: 3px;
+}
+
+.calendar {
+  width: 103%;
+  margin-left: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px #f4f4f4;
+  
+}
+
+.lista_tareas {
+  height: 200px;
+  width: 104%;
+  margin-left: -6px;
+  
+  overflow-y: scroll;
+}
+.div_lista_calendario {
+  margin-top: 8px;
+}
+
+.tarea-negocio-contenedor {
+  width: calc(100% - 9px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.tarea-negocio-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  width: 100%;
+  border: 1px solid rgba(153, 153, 153, 0.2);
+  border-radius: 2px;
+  background-color: white;
+}
+
+.tarea-negocio-linea-superior {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tarea-negocio-linea-intermedia {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: -15px 0px 0px 0px;
+}
+
+.tarea-negocio-linea-inferior {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: -15px 0px 5px 0px;
+  justify-content: space-between;
+}
+
+.tarea-negocio-linea-inferior-timeline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0px 0px 5px 0px;
+  /* justify-content: space; */
+}
+
+.tarea-negocio-linea-inferior-uno {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0px 0px 0px 0px;
+  justify-content: flex-start;
+  width: 90%;
+}
+.tarea-negocio-linea-inferior-dos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0px 0px 0px 0px;
+  justify-content: center;
+  width: 10%;
+}
+
+.tarea-negocio-fecha {
+  color: #00b33c;
+  margin: 0px 5px;
+}
+
+.tarea-negocio-titulo {
+  margin: 6px 0px 3px 0px;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.65);
+  font-weight: bold;
+}
+
+.adm-steps-vertical .adm-step .adm-step-content .adm-step-description {
+  padding-top: 0px;
+}
+
+.tarea-negocio-contacto {
+  margin: 0px 5px;
+  text-transform: uppercase;
+}
+
+.tarea-negocio-tipoTarea {
+  margin: 0px 5px;
+  text-transform: uppercase;
+  color: #00b33c;
+}
+
+.tarea-negocio-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 5px;
+}
+
+.tarea-contenedor-horario {
+  padding: 4px 5px;
+  color: gray;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bold;
+  margin: 0px 0px;
+}
+
+.texto-tarea-horario {
+  margin: 1px 0px 1px 5px;
+  font-size: 0.8rem;
+}
+
+.adm-swipe-action {
+  background-color: #f4f4f4;
+}
+
+.wrapper_lista {
+  width: calc(100% - 5px);
+}
+
+.adm-swipe-action-content {
+  margin-left: 4px;
+  margin-top: 5px;
+}
+
+.VerMas {
+  padding: 4px 5px;
+  margin: 5px 0px;
+  text-align: center;
+}
+
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  color: #00b33c !important;
+  border-color: #00b33c !important;
+  box-shadow: none;
+}
+
+html {
+  --antd-wave-shadow-color: #00b33c !important;
+}
+
+::selection {
+  color: #fff;
+  background: #00b33c !important;
+  box-shadow: none;
+  border-color: #00b33c !important;
+}
+
+.ant-radio-button-wrapper:hover {
+  color: #00b33c !important;
+  border-color: #00b33c !important;
+  box-shadow: none;
+}
+
+.ant-radio-button-wrapper:focus {
+  color: #00b33c !important;
+  border-color: #00b33c !important;
+  box-shadow: none;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  color: #00b33c !important;
+  border-color: #00b33c !important;
+  background-color: #fff;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+  /* border-color: #00b33c !important; */
+  border: none;
+} */

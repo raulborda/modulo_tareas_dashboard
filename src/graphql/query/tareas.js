@@ -24,6 +24,13 @@ export const GET_TAREAS_CALENDARIO = gql`
   }
 `;
 
+// export const GET_TAREAS_CALENDARIO = gql`
+//   query getTareasPropiasMobileResolver($idUsuario: Int) {
+//     getTareasPropiasMobileResolver(idUsuario: $idUsuario)
+//   }
+// `;
+
+
 export const GET_TAREAS_DASHBOARD_IFRAME = gql`
   query getTareasDashboardIframe(
     $idUsuario: Int

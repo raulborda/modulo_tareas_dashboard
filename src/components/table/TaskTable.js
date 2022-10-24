@@ -15,7 +15,8 @@ import { useMutation } from "@apollo/client";
 import { UPDATE_ESTADO_TAREA } from "../../graphql/mutation/tareas";
 import OpenNotification from "../notification/OpenNotification";
 import DetailDrawer from "../drawer/detailDrawer/DetailDrawer";
-import TaskCalendar from "../drawer/taskCalendar/TaskCalendar";
+import Calendario from "../calendario/Calendario";
+import TaskCalendar from "../../components/drawer/taskCalendar/TaskCalendar";
 
 const TaskTable = ({ tareas, queryPoll }) => {
   const [updateEstadoTareaIframeResolver] = useMutation(UPDATE_ESTADO_TAREA);
@@ -225,7 +226,9 @@ const TaskTable = ({ tareas, queryPoll }) => {
       dataIndex: "tar_vencimiento",
       showSorterTooltip: false,
       width: 150,
-      sorter: (a, b) => {a.tar_vencimiento.localeCompare(b.tar_vencimiento)},
+      sorter: (a, b) => {
+        a.tar_vencimiento.localeCompare(b.tar_vencimiento);
+      },
       render: (dataIndex, item) => (
         <div className="vencimiento-wrapper">
           <span style={{ marginRight: "5px" }}>
@@ -303,28 +306,42 @@ const TaskTable = ({ tareas, queryPoll }) => {
 
   return (
     <>
-      <Table
-        onRow={(record, rowIndex) => {
-          return {
-            onClick: (event) => {
-              // alert(JSON.stringify(record));
-              // console.log("click", record);
-            }, // click row
-            onDoubleClick: (event) => {}, // double click row
-            onContextMenu: (event) => {}, // right button click row
-            onMouseEnter: (event) => {}, // mouse enter row
-            onMouseLeave: (event) => {}, // mouse leave row
-          };
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-around",
         }}
-        columns={columns}
-        dataSource={tareas}
-        rowKey={"tar_id"}
-        size="small"
-      />
-      <DetailDrawer
-        showDetailDrawer={showDetailDrawer}
-        closeDrawer={setShowDetailDrawer}
-      />
+      >
+        <Table
+          onRow={(record, rowIndex) => {
+            return {
+              onClick: (event) => {
+                // alert(JSON.stringify(record));
+                // console.log("click", record);
+              }, // click row
+              onDoubleClick: (event) => {}, // double click row
+              onContextMenu: (event) => {}, // right button click row
+              onMouseEnter: (event) => {}, // mouse enter row
+              onMouseLeave: (event) => {}, // mouse leave row
+            };
+          }}
+          columns={columns}
+          dataSource={tareas}
+          rowKey={"tar_id"}
+          size="small"
+        />
+        <DetailDrawer
+          showDetailDrawer={showDetailDrawer}
+          closeDrawer={setShowDetailDrawer}
+        />
+
+        {/* <Calendario/> */}
+
+        <div>
+          <TaskCalendar queryPoll={queryPoll} />
+        </div>
+      </div>
     </>
   );
 };
